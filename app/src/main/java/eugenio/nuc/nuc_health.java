@@ -53,6 +53,7 @@ public class nuc_health extends AppCompatActivity {
                     weight = Double.parseDouble(peso.getText().toString());
                     age = Double.parseDouble(edad.getText().toString());
                     bmr = (10 * weight) + (6.25 * height*100) - (5 * age) + 5;
+
                     //66 + (6.23 * weight) + (12.7 * height) - (6.76 * age);
 
                 break;
@@ -205,6 +206,8 @@ public class nuc_health extends AppCompatActivity {
         loadSavedPreferences();
 
 
+
+
     //Boton para ir a la Actividad Basic Juices
 
         final Button button = findViewById(R.id.button_go_juices);
@@ -218,11 +221,11 @@ public class nuc_health extends AppCompatActivity {
 
 
 
-
+//****************************CALCULAR************************************************************************************
         //Acciones cuando se presiona el boton de calcular
 
         calculate_button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
+            public void onClick(View view) {
 
                 //Aqui van las operaciones
 
@@ -231,18 +234,24 @@ public class nuc_health extends AppCompatActivity {
                 bmi = weight / (height * height);
 
 
+
+
+
+
+
+
                 savePreferences("storedHeight", altura.getText().toString());
                 savePreferences("storedWeight", peso.getText().toString());
                 savePreferences("storedAge", edad.getText().toString());
 
-                savePreferences("Male_Value", radioButtonMale.isChecked());
-                savePreferences("Female_Value", radioButtonFemale.isChecked());
+//                savePreferences("Male_Value", radioButtonMale.isChecked());
+//                savePreferences("Female_Value", radioButtonFemale.isChecked());
 
-                savePreferences("Sede", radioButtonSedentary.isChecked());
-                savePreferences("Ligh", radioButtonLightlyActive.isChecked());
-                savePreferences("Mode", radioButtonModeratelyActive.isChecked());
-                savePreferences("Very", radioButtonVeryActive.isChecked());
-                savePreferences("Extr", radioButtonExtremelyActive.isChecked());
+//                savePreferences("Sede", radioButtonSedentary.isChecked());
+//                savePreferences("Ligh", radioButtonLightlyActive.isChecked());
+//                savePreferences("Mode", radioButtonModeratelyActive.isChecked());
+//                savePreferences("Very", radioButtonVeryActive.isChecked());
+//                savePreferences("Extr", radioButtonExtremelyActive.isChecked());
 
 
 
@@ -316,7 +325,7 @@ public class nuc_health extends AppCompatActivity {
         });
 
 
-
+//*****************************************************************************************************************
 
 
 
@@ -337,69 +346,69 @@ public class nuc_health extends AppCompatActivity {
         SharedPreferences sharedPreferences = PreferenceManager
                 .getDefaultSharedPreferences(this);
 
-        boolean radioButtonMaleValue = sharedPreferences.getBoolean("Male_Value", false);
-        boolean radioButtonFemaleValue = sharedPreferences.getBoolean("Female_Value", false);
+//        boolean radioButtonMaleValue = sharedPreferences.getBoolean("Male_Value", false);
+//        boolean radioButtonFemaleValue = sharedPreferences.getBoolean("Female_Value", false);
 
-        boolean radioButtonSedentaryValue = sharedPreferences.getBoolean("Sede", false);
-        boolean radioButtonLightValue = sharedPreferences.getBoolean("Ligh", false);
-        boolean radioButtonModeratelyValue = sharedPreferences.getBoolean("Mode", false);
-        boolean radioButtonVeryValue = sharedPreferences.getBoolean("Very", false);
-        boolean radioButtonExtremelyValue = sharedPreferences.getBoolean("Extr", false);
+//        boolean radioButtonSedentaryValue = sharedPreferences.getBoolean("Sede", false);
+//        boolean radioButtonLightValue = sharedPreferences.getBoolean("Ligh", false);
+//        boolean radioButtonModeratelyValue = sharedPreferences.getBoolean("Mode", false);
+//        boolean radioButtonVeryValue = sharedPreferences.getBoolean("Very", false);
+//        boolean radioButtonExtremelyValue = sharedPreferences.getBoolean("Extr", false);
 
-        String altura1 = sharedPreferences.getString("storedHeight", "Height (m)");
+        String altura1 = sharedPreferences.getString("storedHeight", "1.7");
         altura.setText(altura1);
 
-        String peso1 = sharedPreferences.getString("storedWeight", "Weight (Kg)");
+        String peso1 = sharedPreferences.getString("storedWeight", "70");
         peso.setText(peso1);
 
-        String edad1 = sharedPreferences.getString("storedAge", "Age (Years)");
+        String edad1 = sharedPreferences.getString("storedAge", "28");
         edad.setText(edad1);
 
-        if (radioButtonMaleValue) {
-            radioButtonMale.setChecked(true); //revisaras esto
-        } else {
-            radioButtonMale.setChecked(false);
-        }
-
-        if (radioButtonFemaleValue) {
-            radioButtonFemale.setChecked(true); //revisaras esto
-        } else {
-            radioButtonFemale.setChecked(false);
-        }
-
-
+//        if (radioButtonMaleValue) {
+//            radioButtonMale.setChecked(true); //revisaras esto
+//        } else {
+//            radioButtonMale.setChecked(false);
+//        }
+//
+//        if (radioButtonFemaleValue) {
+//            radioButtonFemale.setChecked(true); //revisaras esto
+//        } else {
+//            radioButtonFemale.setChecked(false);
+//        }
 
 
 
-        if (radioButtonSedentaryValue) {
-            radioButtonSedentary.setChecked(true); //revisaras esto
-        } else {
-            radioButtonSedentary.setChecked(false);
-        }
 
-        if (radioButtonLightValue) {
-            radioButtonLightlyActive.setChecked(true); //revisaras esto
-        } else {
-            radioButtonLightlyActive.setChecked(false);
-        }
 
-        if (radioButtonModeratelyValue) {
-            radioButtonModeratelyActive.setChecked(true); //revisaras esto
-        } else {
-            radioButtonModeratelyActive.setChecked(false);
-        }
-
-        if (radioButtonVeryValue) {
-            radioButtonVeryActive.setChecked(true); //revisaras esto
-        } else {
-            radioButtonVeryActive.setChecked(false);
-        }
-
-        if (radioButtonExtremelyValue) {
-            radioButtonExtremelyActive.setChecked(true); //revisaras esto
-        } else {
-            radioButtonExtremelyActive.setChecked(false);
-        }
+//        if (radioButtonSedentaryValue) {
+//            radioButtonSedentary.setChecked(true); //revisaras esto
+//        } else {
+//            radioButtonSedentary.setChecked(false);
+//        }
+//
+//        if (radioButtonLightValue) {
+//            radioButtonLightlyActive.setChecked(true); //revisaras esto
+//        } else {
+//            radioButtonLightlyActive.setChecked(false);
+//        }
+//
+//        if (radioButtonModeratelyValue) {
+//            radioButtonModeratelyActive.setChecked(true); //revisaras esto
+//        } else {
+//            radioButtonModeratelyActive.setChecked(false);
+//        }
+//
+//        if (radioButtonVeryValue) {
+//            radioButtonVeryActive.setChecked(true); //revisaras esto
+//        } else {
+//            radioButtonVeryActive.setChecked(false);
+//        }
+//
+//        if (radioButtonExtremelyValue) {
+//            radioButtonExtremelyActive.setChecked(true); //revisaras esto
+//        } else {
+//            radioButtonExtremelyActive.setChecked(false);
+//        }
 
 
     }
